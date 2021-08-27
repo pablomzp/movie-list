@@ -4,7 +4,7 @@ import { DetailsPageComponent } from './pages/details-page/details-page.componen
 import { MoviesPageComponent } from './pages/movies-page/movies-page.component';
 
 const routes: Routes = [
-  {path:"movies", component: MoviesPageComponent},
+  {path:"", component: MoviesPageComponent},
   {path: "details", component: DetailsPageComponent},
 ];
 

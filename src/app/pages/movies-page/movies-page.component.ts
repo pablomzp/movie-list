@@ -1,3 +1,4 @@
+import { MovieService } from './../../shared/services/movie.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,8 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviesPageComponent implements OnInit {
 
-  constructor() { }
+  movies: any[];
+  searchValue: string = "";
 
-  ngOnInit() {}
+  constructor(private MovieService: MovieService) { }
 
+  ngOnInit() {
+  }
+
+  clickedSearch() {
+    this.MovieService.getMovies(this.searchValue.toLocaleLowerCase()).subscribe((res: any) => {
+      this.movies = res.results;
+      console.log(this.movies)
+    })
+  }
 }

@@ -1,3 +1,16 @@
-<p>
-  movies-page works!
-</p>
+<ion-toolbar>
+  <ion-buttons slot="primary">
+    <ion-button (click)="clickedSearch()">
+      <ion-icon slot="icon-only" name="search"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-searchbar [(ngModel)]="searchValue" placeholder="Search your favourite movie" name="movie"></ion-searchbar>
+</ion-toolbar>
+
+<ion-content [scrollEvents]="true">
+  <ion-list *ngFor="let movie of movies">
+    <ion-item>
+      <ion-label>{{ movie.original_title }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
