@@ -1,4 +1,4 @@
-<ion-toolbar>
+  <ion-toolbar>
   <ion-buttons slot="primary">
     <ion-button (click)="clickedSearch()">
       <ion-icon slot="icon-only" name="search"></ion-icon>
@@ -8,8 +8,8 @@
 </ion-toolbar>
 
 <ion-content [scrollEvents]="true">
-  <ion-list *ngFor="let movie of movies">
-    <ion-item>
+  <ion-list *ngFor="let movie of movies" routerLink="/details">
+    <ion-item (click)="getMovieId(movie.id)" >
       <ion-label>{{ movie.original_title }}</ion-label>
     </ion-item>
   </ion-list>

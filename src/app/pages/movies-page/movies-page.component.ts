@@ -22,4 +22,10 @@ export class MoviesPageComponent implements OnInit {
       console.log(this.movies)
     })
   }
+
+  // get id to share between siblings pages
+  getMovieId(movieId) {
+    this.MovieService.setId(movieId);
+    console.log(movieId);
+  }
 }

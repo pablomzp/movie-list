@@ -13,9 +13,10 @@ import { MoviesPageComponent } from './pages/movies-page/movies-page.component';
 import { DetailsPageComponent } from './pages/details-page/details-page.component';
 
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, MoviesPageComponent, DetailsPageComponent],
+  declarations: [AppComponent, HeaderComponent, MoviesPageComponent, DetailsPageComponent, FooterComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, CommonModule, FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

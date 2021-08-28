@@ -1,3 +1,15 @@
-<p>
-  details-page works!
-</p>
+<ion-app class="has-header">
+<ion-content>
+    <ion-card-header>
+      <ion-card-subtitle>{{ movie.release_date }}</ion-card-subtitle>
+      <ion-card-title>{{ movie.title }}</ion-card-title>
+      <ion-card-subtitle>Original language: {{movie.original_language | uppercase}}</ion-card-subtitle>
+      <br />
+      <img
+        src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}"
+      />
+    </ion-card-header>
+    <ion-card-content>{{ movie.overview }}</ion-card-content>
+    <ion-button expand="block" color="light "routerLink="/">Go back</ion-button>
+</ion-content>
+</ion-app>

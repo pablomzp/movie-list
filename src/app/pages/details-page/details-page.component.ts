@@ -1,3 +1,4 @@
+import { MovieService } from './../../shared/services/movie.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,8 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsPageComponent implements OnInit {
 
-  constructor() { }
+  movie: any;
+  movieId: any;
 
-  ngOnInit() {}
+  constructor(private MovieService: MovieService) { }
+
+  ngOnInit() {
+    this.MovieService.sharedId.subscribe(id => this.movieId = id);
+    console.log(this.movieId);
+
+    this.MovieService.getMovieById(this.movieId).subscribe((res: any) => {
+      this.movie = res;
+      console.log(this.movie);
+    })
+  }
 
 }
