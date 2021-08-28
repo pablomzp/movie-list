@@ -9,18 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class MoviesPageComponent implements OnInit {
 
   movies: any[];
-  searchValue: string = "";
 
   constructor(private MovieService: MovieService) { }
 
   ngOnInit() {
-  }
-
-  clickedSearch() {
-    this.MovieService.getMovies(this.searchValue.toLocaleLowerCase()).subscribe((res: any) => {
-      this.movies = res.results;
-      console.log(this.movies)
-    })
+    this.MovieService.sharedSearchedMovie.subscribe(foundMovies => this.movies = foundMovies)
+    console.log(this.movies)
   }
 
   // get id to share between siblings pages

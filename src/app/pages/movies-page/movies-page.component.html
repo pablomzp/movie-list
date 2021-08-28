@@ -1,13 +1,8 @@
-  <ion-toolbar>
-  <ion-buttons slot="primary">
-    <ion-button (click)="clickedSearch()">
-      <ion-icon slot="icon-only" name="search"></ion-icon>
-    </ion-button>
-  </ion-buttons>
-  <ion-searchbar [(ngModel)]="searchValue" placeholder="Search your favourite movie" name="movie"></ion-searchbar>
-</ion-toolbar>
+<ion-content *ngIf="movies.length === 0">
+  <img src="https://image.flaticon.com/icons/png/512/2459/2459778.png">
+</ion-content>
 
-<ion-content [scrollEvents]="true">
+<ion-content [scrollEvents]="true" *ngIf="movies.lenght !== 0">
   <ion-list *ngFor="let movie of movies" routerLink="/details">
     <ion-item (click)="getMovieId(movie.id)" >
       <ion-label>{{ movie.original_title }}</ion-label>

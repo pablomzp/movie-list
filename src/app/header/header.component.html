@@ -2,4 +2,12 @@
   <ion-toolbar>
     <ion-title>My Movie List</ion-title>
   </ion-toolbar>
+  <ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button (click)="clickedSearch()" routerLink="/">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-searchbar [(ngModel)]="searchedValue" placeholder="Search your favourite movie" name="movie"></ion-searchbar>
+  </ion-toolbar>
 </ion-header>

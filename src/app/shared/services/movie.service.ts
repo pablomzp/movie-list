@@ -20,6 +20,14 @@ export class MovieService {
 
   // API KEY: 64fd869f0ffe02ff4690ccd8257a48fc
 
+  // shared input text between header and movie-page
+  private searchedMovies = new BehaviorSubject([]);
+  sharedSearchedMovie = this.searchedMovies.asObservable();
+
+  setSearchedMovie(movies) {
+    this.searchedMovies.next(movies);
+  }
+
   getMovieById(id) {
     return this.http.get('https://api.themoviedb.org/3/movie/' + id + '?api_key=64fd869f0ffe02ff4690ccd8257a48fc');
   }
